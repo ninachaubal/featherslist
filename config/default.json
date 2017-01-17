@@ -1,0 +1,14 @@
+{
+  "host": "localhost",
+  "port": 8080,
+  "mongodb": "mongodb://localhost:27017/featherslist",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "lVSv9TIJhd1EtxMciVZST/KjeGpeQD6hrdywZoBzTvr0Lffz57xOBgTKwAZ6SLA7S0J+RB37kepT3987LjZmbA=="
+    },
+    "local": {
+      "usernameField": "username"
+    }
+  }
+}

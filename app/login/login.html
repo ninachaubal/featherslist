@@ -1,0 +1,19 @@
+<header>
+  <h1>Log In</h1>
+</header>
+<main class="login">
+  <status-msg [hidden]="!showStatus" [message]="statusMessage" [success]="false"></status-msg>
+  <form #login="ngForm" (ngSubmit)="onSubmit()">
+    <section ngControlGroup="credentials">
+      <label>Username</label>
+      <input [(ngModel)]="credentials.username" type="text" name="username"
+             label="Username" placeholder="username" aria-label="Username"
+             autocomplete="username" autocapitalize="false" required>
+      <label>Password</label>
+      <input [(ngModel)]="credentials.password" type="password" name="password"
+             label="Password" placeholder="password" aria-label="Password"
+             autocapitalize="false" required>
+    </section>
+    <button type="submit">Log in</button>
+  </form>
+</main>

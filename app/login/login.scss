@@ -1,0 +1,47 @@
+@import "_common";
+
+header {
+  @include susy-breakpoint($wide, $wideLayout) {
+    h1 {
+      @include span(4);
+      @include push(2);
+    }
+  }
+}
+
+.login {
+  @include susy-breakpoint($wide, $wideLayout) {
+    form {
+      @include span(2);
+      @include push(2);
+    }
+
+    status-msg {
+      @include span(2);
+      @include push(2);
+    }
+  }
+
+  @include susy-breakpoint($narrow, $narrowLayout) {
+    form {
+      @include span(1);
+    }
+
+    status-msg {
+      @include span(1);
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+
+  section {
+    margin-bottom: 2*$vertical-spacer;
+  }
+
+  input[type="submit"] {
+    display: block;
+    width: auto;
+  }
+}

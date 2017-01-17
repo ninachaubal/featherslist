@@ -1,0 +1,14 @@
+{
+  "host": "featherslist.feathersjs.com",
+  "port": "PORT",
+  "mongodb": "DATABASE_URL",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "FEATHERS_AUTH_SECRET"
+    },
+    "local": {
+      "usernameField": "username"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Featherslist</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Feathers+Angular Starter app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/global.css" rel="stylesheet">
+    <base href="/">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/lib/shim.min.js"></script>
+    <script src="/lib/zone.js"></script>
+    <script src="/lib/Reflect.js"></script>
+    <script src="/lib/feathers.js"></script>
+    <script src="/lib/localstorage.js"></script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>')</script>
+    <script>
+      // Set up feathers.
+      var socket = io();
+      var app = feathers()
+        .configure(feathers.socketio(socket))
+        .configure(feathers.hooks())
+        .configure(feathers.authentication({ storage: window.localStorage }));
+    </script>
+  </head>
+  <body>
+    <my-app>
+      Loading <i class="fa fa-spinner fa-pulse"></i>
+    </my-app>
+  </body>
+  <script src="/build.js"></script>
+</html>

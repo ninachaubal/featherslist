@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+@import "node_modules/font-awesome/scss/font-awesome";
+@import "node_modules/node-normalize-scss/_normalize";
+
+@import "_common";
+
+// Body styles.
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  background-color: $background-color;
+}
+
+// App component styles.
+my-app {
+  position: relative;
+  z-index: 1;
+}
+
+nav-cmp {
+  display: block;
+  height: $nav-height;
+}
+
+// Elements.
+a {
+  text-decoration: none;
+  color: $primary-color;
+
+  :hover {
+    color: $darker-primary-color;
+  }
+}
+
+main {
+  margin-top: $vertical-spacer;
+}
+
+// Header
+header {
+  height: $header-height;
+  @extend .invert-color;
+  position: relative;
+
+  h1 {
+    color: $background-color;
+    position: absolute;
+    bottom: $vertical-spacer;
+  }
+
+  @include susy-breakpoint($wide, $wideLayout) {
+    h1 {
+      @include span(4);
+      @include push(1);
+    }
+  }
+
+  @include susy-breakpoint($narrow, $narrowLayout) {
+    h1 {
+      @include span(1);
+    }
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 300;
+  color: $primary-color;
+}
+h1 { font-size: 3.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 2.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 2.3rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.0rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+// Forms
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  @extend .invert-color;
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid $secondary-color;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  :focus, :hover {
+    background-color: $darker-primary-color;
+    border-color: $primary-color;
+    outline: 0;
+  }
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  appearance: none;
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: $background-color;
+  border: 1px solid $secondary-color;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+
+  :focus {
+    border: 1px solid $primary-color;
+    outline: 0;
+  }
+}
+
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+label,
+legend {
+  color: $secondary-color;
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  padding-top: $vertical-spacer;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
