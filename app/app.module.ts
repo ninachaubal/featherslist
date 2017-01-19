@@ -19,9 +19,10 @@ import { StatusMessageComponent } from './status-message/status-message';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent},
-      { path: 'login', component: LoginComponent},
-      { path: 'logout', component: LogoutComponent},
+      { path: 'admin', component: AdminComponent },
+      { path: '', component: HomeComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'logout', component: LogoutComponent },
     ])
   ],
   declarations: [
